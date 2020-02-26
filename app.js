@@ -40,6 +40,7 @@ app.post("/", function(req, res){
   const options = {
     method: "POST",
     auth: "cloud1:5790c647f519aaddacb0e6985b47d389-us4"
+    //auth: "accessKeyId:"
   }
 
   const request = https.request(url, options, function (response){
