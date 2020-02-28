@@ -3,17 +3,18 @@ const express = require ('express');
 const bodyParser = require ('body-parser');
 const request = require('request');
 const https = require("https");
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get("/", function(req, res){
+app.get("/", (req, res) =>{
   res.sendFile(__dirname + "/signup.html");
 });
 
-app.post("/", function(req, res){
+app.post("/", (req, res) =>{
   
   const firstName = req.body.fName;
   const lastName = req.body.lName;
@@ -64,6 +65,6 @@ app.post("/failure", function(req, res) {
 });
 
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("server is running");
+app.listen(PORT, () =>{
+  console.log(`server is running on port ${PORT}`);
 });
