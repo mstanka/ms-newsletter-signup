@@ -1,50 +1,113 @@
-html,
-body {
-  height: 100%;
+@import url('https://fonts.googleapis.com/css?family=Arimo:400,700&display=swap');
+
+:root {
+  --primary-color: #3da9fc;
+  --primary-color-dark: #0376ce;
+  --light-color: #f5f5f5;
+  --light-color-dark: #46455b;
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
+  min-height: 100vh;
+  font-family: 'Arimo', sans-serif;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
   align-items: center;
+  justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #f5f5f5;
+  background-color: var(--light-color);
 }
 
-.form-signup {
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 28px;
+  text-align: center;
+  line-height: 1.2em;
+  letter-spacing: .1em;
+  color: var(--light-color-dark);
+}
+
+input {
+  display: block;
   width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
+  padding: 5px;
+  border: 1px solid var(--light-color-dark);
 }
 
-.form-signup .form-control {
+.form {
+  width: 100%;
+  max-width: 375px;
+  padding: 20px;
+  margin: 0 auto;
+  border: 1px solid var(--light-color-dark);
+}
+
+.form-control {
   position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
-}
-
-.form-signup .form-control:focus {
-  z-index: 2;
-}
-
-.top {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.middle {
-  border-radius: 0;
-  margin-bottom: -1px;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .bottom {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  margin-bottom: 20px;  
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: var(--light-color-dark);
+}
+
+.form-control.success input {
+  border-color: var(--success-color);
+}
+
+.form-control.error input {
+  border-color: var(--error-color);
+}
+
+.form-control small {
+  color: var(--error-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px 0;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  text-transform: uppercase;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+}
+
+.btn:focus, .btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.text-muted {
+  text-align: center;
+  color: var(--light-color-dark);
+  font-size: 12px;
 }
